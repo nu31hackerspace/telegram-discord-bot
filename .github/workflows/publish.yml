@@ -10,7 +10,6 @@ env:
     DOCKER_STACKE_NAME: telegram-discord-bot
     DEPLOY_USER: ${{ vars.USERNAME }}
     HOST: ${{ vars.HOST }}
-    IMAGE_NAME: nu31hackerspace/telegram-discord-bot
 
 jobs:
     build-and-push-image:
@@ -19,7 +18,7 @@ jobs:
                 include:
                     - name: telegram-discord-bot
                       context: .
-                      image: telegram-discord-bot
+                      image: nu31hackerspace/telegram-discord-bot
 
         runs-on: ubuntu-latest
         permissions:
