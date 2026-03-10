@@ -10,6 +10,7 @@ env:
     DOCKER_STACKE_NAME: telegram-discord-bot
     DEPLOY_USER: ${{ vars.USERNAME }}
     HOST: ${{ vars.HOST }}
+    IMAGE_NAME: nu31hackerspace/telegram-discord-bot
 
 jobs:
     build-and-push-image:
@@ -45,8 +46,8 @@ jobs:
                   context: ${{ matrix.context }}
                   push: true
                   tags: |
-                      ${{ env.REGISTRY }}/denikryt/${{ matrix.image }}:latest
-                      ${{ env.REGISTRY }}/denikryt/${{ matrix.image }}:${{ github.sha }}
+                      ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/${{ matrix.image }}:latest
+                      ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/${{ matrix.image }}:${{ github.sha }}
                   build-args: |
                       GIT_COMMIT_SHA=${{ github.sha }}
 
