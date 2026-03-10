@@ -65,7 +65,7 @@ jobs:
                   echo "MONGO_URI='${{ secrets.MONGO_URI }}'" >> ./envfile
                   echo "DISCORD_TOKEN=${{ secrets.DISCORD_TOKEN }}" >> ./envfile
                   echo "TELEGRAM_TOKEN=${{ secrets.TELEGRAM_TOKEN }}" >> ./envfile
-                  echo "IMAGE_NAME=${{ secrets.IMAGE_NAME }}" >> ./envfile
+                  echo "IMAGE_NAME=${{ env.IMAGE_NAME }}" >> ./envfile
 
             - name: Docker Stack Deploy
               uses: cssnr/stack-deploy-action@v1
