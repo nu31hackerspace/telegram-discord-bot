@@ -45,8 +45,8 @@ jobs:
                   context: ${{ matrix.context }}
                   push: true
                   tags: |
-                      ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/${{ matrix.image }}:latest
-                      ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/${{ matrix.image }}:${{ github.sha }}
+                      ${{ env.REGISTRY }}/${{ matrix.image }}:latest
+                      ${{ env.REGISTRY }}/${{ matrix.image }}:${{ github.sha }}
                   build-args: |
                       GIT_COMMIT_SHA=${{ github.sha }}
 
